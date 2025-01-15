@@ -6,6 +6,5 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist', // Ensure Vite outputs the build to the dist directory
-  },
-  base: '/', // This ensures relative paths work properly
+  }
 })  
