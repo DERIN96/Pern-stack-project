@@ -8,4 +8,4 @@ export default defineConfig({
     outDir: 'dist', // Ensure Vite outputs the build to the dist directory
   },
   base: '/', // This ensures relative paths work properly
-})
+})  
