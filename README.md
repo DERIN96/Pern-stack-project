@@ -2,7 +2,7 @@
 
 Product List is a full-stack application built using the PERN stack (PostgreSQL, Express, React, Node.js). It allows users to manage and view a list of products. The frontend is built with React using Vite, while the backend is created using Node and Express. The database used is PostgreSQL. The project is hosted on Vercel for the frontend, while the backend is hosted locally using Ngrok.
 
-## Tech Stack
+## PERN stack with Vercel and Ngrok
 
 - **Frontend**: React (Vite)
 - **Backend**: Node.js and Express
