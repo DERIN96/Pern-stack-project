@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getProducts, createProduct, updateProduct, deleteProduct } from './services/productService';
 import ProductForm from './components/ProductForm';
 import ProductList from './components/ProductList';
+import  Footer  from './components/Footer';
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -53,7 +54,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Product List</h1>
       <ProductForm
         onSubmit={editingProduct ? handleUpdateProduct : handleAddProduct}
@@ -64,6 +65,7 @@ function App() {
         onEdit={setEditingProduct}
         onDelete={handleDeleteProduct}
       />
+      <Footer/>
     </div>
   );
 }

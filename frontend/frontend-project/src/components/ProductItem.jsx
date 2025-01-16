@@ -2,9 +2,9 @@ import React from 'react';
 
 const ProductItem = ({ product, onEdit, onDelete }) => (
   <li>
-    <strong>{product.name}</strong> - {product.description} - ${product.price}
-    <button onClick={() => onEdit(product)}>Edit</button>
-    <button onClick={() => onDelete(product.id)}>Delete</button>
+    <p><strong>{product.name}</strong> - {product.description} - &#8377;{product.price}</p>
+    <button className='edit-btn buttons'  onClick={() => onEdit(product)}>Edit</button>
+    <button className='delete-btn buttons' onClick={() => onDelete(product.id)}>Delete</button>
   </li>
 );
 

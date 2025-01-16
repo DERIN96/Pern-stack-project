@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-const apiUrl = "https://0aee-27-4-237-103.ngrok-free.app/api/products";
+const apiUrl = "https://1d40-27-5-244-186.ngrok-free.app/api/products";
+const apiConfig = {headers: { "ngrok-skip-browser-warning": "true" }};
 
 export const getProducts = async () => {
   try {
-    const response = await axios.get(apiUrl,{headers: { "ngrok-skip-browser-warning": "true" }});
+    const response = await axios.get(apiUrl,apiConfig);
     return response.data;
   } catch (error) {
     console.error("Error fetching products:", error);
@@ -14,7 +15,8 @@ export const getProducts = async () => {
 
 export const createProduct = async (product) => {
   try {
-    const response = await axios.post(apiUrl, product);
+    console.log(product);
+    const response = await axios.post(apiUrl, product,apiConfig);
     return response.data;
   } catch (error) {
     console.error("Error adding product:", error);
@@ -24,7 +26,7 @@ export const createProduct = async (product) => {
 
 export const updateProduct = async (id, product) => {
   try {
-    const response = await axios.put(`${apiUrl}/${id}`, product);
+    const response = await axios.put(`${apiUrl}/${id}`, product,apiConfig);
     return response.data;
   } catch (error) {
     console.error("Error updating product:", error);
@@ -34,7 +36,7 @@ export const updateProduct = async (id, product) => {
 
 export const deleteProduct = async (id) => {
   try {
-    await axios.delete(`${apiUrl}/${id}`);
+    await axios.delete(`${apiUrl}/${id}`,apiConfig);
   } catch (error) {
     console.error("Error deleting product:", error);
     throw error;

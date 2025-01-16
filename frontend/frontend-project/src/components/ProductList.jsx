@@ -2,7 +2,7 @@ import React from 'react';
 import ProductItem from './ProductItem';
 
 const ProductList = ({ products, onEdit, onDelete }) => (
-  <ul>
+  <ul style={{listStyle:'none'}}>
     {products.map((product) => (
       <ProductItem
         key={product.id}

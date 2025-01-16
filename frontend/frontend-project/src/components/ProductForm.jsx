@@ -20,7 +20,16 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    if (formData.name != '' && formData.description != '' && formData.price != '' ) {
+        onSubmit(formData);
+        setFormData({
+            name: '',
+            description: '',
+            price: ''
+        })
+    } else {
+        alert("All the fields are mandatory for adding new product!");
+    }
   };
 
   return (
@@ -38,6 +47,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
         placeholder="Description"
         value={formData.description}
         onChange={handleChange}
+        className='input-description'
       />
       <input
         type="number"
@@ -46,7 +56,7 @@ const ProductForm = ({ onSubmit, initialData }) => {
         value={formData.price}
         onChange={handleChange}
       />
-      <button type="submit">{initialData ? 'Update' : 'Add'}</button>
+      <button className='add-btn buttons' type="submit">{initialData ? 'Update' : 'Add'}</button>
     </form>
   );
 };
