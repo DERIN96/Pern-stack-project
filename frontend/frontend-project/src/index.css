@@ -65,6 +65,18 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.warning {
+    color: #d9534f; /* Bootstrap danger red */
+    background-color: #f8d7da; /* Light red background */
+    border: 1px solid #f5c6cb; /* Border matching the background */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Add some spacing */
+    margin: 10px 0; /* Spacing around the warning */
+    font-size: 14px; /* Adjust the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center-align the text */
+  }
+
 ul{
     flex: 1;
     padding: 20px;

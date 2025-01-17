@@ -18,6 +18,8 @@ const ProductForm = ({ onSubmit, initialData }) => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const [inputWarning,setInputWarning] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name != '' && formData.description != '' && formData.price != '' ) {
@@ -27,13 +29,15 @@ const ProductForm = ({ onSubmit, initialData }) => {
             description: '',
             price: ''
         })
+        setInputWarning(false);
     } else {
-        alert("All the fields are mandatory for adding new product!");
+        setInputWarning(true);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      {inputWarning?<p className='warning'>All the fields are mandatory for adding new product!</p>:null}
       <input
         type="text"
         name="name"
