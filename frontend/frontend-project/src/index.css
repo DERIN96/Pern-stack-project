@@ -160,8 +160,19 @@ footer {
     font-size: 0.9rem; /* Slightly smaller font size */
     border-top: 2px solid #444; /* Add a subtle top border */
     margin-top: auto; /* Push footer to the bottom */
- }
+}
  
  footer p {
     margin: 5px 0; /* Add spacing between paragraphs */
- }
+}
+
+ .heart {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+  
+  .heart:hover {
+    transform: scale(1.5); /* Make the heart 1.5 times bigger */
+    color: #e63946; /* Change the heart color on hover */
+}

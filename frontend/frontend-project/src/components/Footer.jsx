@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
         <footer>
             <p>&copy; 2025 Product List App. All rights reserved.</p>
-            <p>Made with ❤️ by DERIN.</p>
+            <p>Made with <span className='heart'>❤️</span>  by DERIN.</p>
         </footer>
     </div>
   )
