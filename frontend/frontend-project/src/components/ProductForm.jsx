@@ -7,9 +7,12 @@ const ProductForm = ({ onSubmit, initialData }) => {
     price: ''
   });
 
+  const [inputWarning,setInputWarning] = useState(false);
+
   useEffect(() => {
     if (initialData) {
       setFormData(initialData);
+      setInputWarning(false);
     }
   }, [initialData]);
 
@@ -17,8 +20,6 @@ const ProductForm = ({ onSubmit, initialData }) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  const [inputWarning,setInputWarning] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
