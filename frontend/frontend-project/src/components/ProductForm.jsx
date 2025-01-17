@@ -37,7 +37,17 @@ const ProductForm = ({ onSubmit, initialData }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {inputWarning && <p className='warning'>All the fields are mandatory for adding new product!</p>}
+      {inputWarning && (
+        initialData ? (
+          <p className="warning">
+            Empty fields are not allowed while updating the product!
+          </p>
+        ) : (
+          <p className="warning">
+            All the fields are mandatory for adding a new product!
+          </p>
+        )
+      )}
       <input
         type="text"
         name="name"
